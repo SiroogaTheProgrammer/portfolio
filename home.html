@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Dark theme background */
+        body {
+            background-color: #121212;
+        }
+
+        /* Centered container */
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        /* Header text */
+        h1 {
+            text-align: center;
+            color: yellowgreen;
+            font-size: 40px !important;
+        }
+
+        /* Regular text */
+        p {
+            font-size: 20px;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /*slider for content*/
+
+        /* From Uiverse.io by Xtenso */ 
+        .filter-switch {
+            border: 2px solid yellowgreen;
+            border-radius: 30px;
+            position: relative;
+            margin-top: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            height: 50px;
+            width: 400px;
+            overflow: hidden;
+        }
+  .filter-switch input {
+    display: none;
+  }
+  .filter-switch label {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.5s;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .filter-switch .background {
+    position: absolute;
+    width: 49%;
+    height: 38px;
+    background-color: yellowgreen;
+    top: 4px;
+    left: 4px;
+    border-radius: 30px;
+    transition: left 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  #option2:checked ~ .background {
+    left: 50%;
+  }
+  #option1:checked + label[for="option1"] {
+    color: #212121;
+    font-weight: bold;
+  }
+  #option2:checked + label[for="option2"] {
+    color: #212121;
+    font-weight: bold;
+  }
+  #option1:not(:checked) + label[for="option1"],
+  #option2:not(:checked) + label[for="option2"] {
+    color: #7d7d7d;
+  }
+
+  
+
+    </style>
+</head>
+<body>
+    <!-- From Uiverse.io by Xtenso --> 
+<div id="firstFilter" class="filter-switch">
+    <input checked="" id="option1" name="options" type="radio" />
+    <label class="option" for="option1">Overview</label>
+    <input id="option2" name="options" type="radio" />
+    <label class="option" for="option2">Projects</label>
+    <span class="background"></span>
+  </div>
+  
+    <div class="container">
+        <h1>Welcome to My Portfolio</h1>
+        <p>This is where you'll find information about my work, skills, and projects. Feel free to explore!</p>
+        <p>By going to the "Projects" tab you can find all sorts of projects I created over the years.</p>
+        <p>Projects were created in 3 languages: Python, C++, and Javascript. All Javascript projects are active websites which can be visited through the links provided. Usualy the source code is provided on the website, if not, then link to source code will be displayed next to the visit button.</p>
+        <p>Python projects can be simply copied and run on your own device.</p>
+        <p>C++ projects will have 2 versions available. One is an already prebuilt <b>.exe</b> file which could be run, and the original code for that project will be provided on a subpage to be copied.</p>
+        <p>A * next to a Python or a C++ project signifies that this project is also available in a different programming language.</p>
+    </div>
+
+</body>
+</html>
