@@ -11,9 +11,17 @@
             background-color: #121212;
         }
 
+        .content-wrapper {
+            overflow: hidden;
+            margin-left: auto;
+            margin-right: auto;
+            width: 1000px; /* Only show one content block at a time */
+            position: relative;
+        }
+
         /* Centered container */
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             padding: 20px;
             margin-left: auto;
             margin-right: auto;
@@ -21,6 +29,15 @@
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             position: relative;
+
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.4s ease;
+            display: none;
+        }
+
+        .container.active {
+            display: block;
+            opacity: 1; /* Show active content */
         }
 
         /* Header text */
@@ -110,8 +127,10 @@
     <span class="background"></span>
   </div>
   
-    <div class="container">
+  <div class="content-wrapper">
+    <div class="container active" id="overview-content">
         <h1>Welcome to My Portfolio</h1>
+        <br>
         <p>This is where you'll find information about my work, skills, and projects. Feel free to explore!</p>
         <p>By going to the "Projects" tab you can find all sorts of projects I created over the years.</p>
         <p>Projects were created in 3 languages: Python, C++, and Javascript. All Javascript projects are active websites which can be visited through the links provided. Usualy the source code is provided on the website, if not, then link to source code will be displayed next to the visit button.</p>
@@ -119,6 +138,51 @@
         <p>C++ projects will have 2 versions available. One is an already prebuilt <b>.exe</b> file which could be run, and the original code for that project will be provided on a subpage to be copied.</p>
         <p>A * next to a Python or a C++ project signifies that this project is also available in a different programming language.</p>
     </div>
+
+    <div class="container" id="projects-content">
+        <h1>My Projects</h1>
+        <p>By going to the "Projects" tab you can find all sorts of projects I created over the years.</p>
+        <p>Projects were created in 3 languages: Python, C++, and Javascript...</p>
+    </div>
+    </div>
+
+<script>
+    document.querySelectorAll('input[name="options"]').forEach((input) => {
+      input.addEventListener('change', function () {
+          const option = this.id;
+          const overviewContent = document.getElementById('overview-content');
+          const projectsContent = document.getElementById('projects-content');
+  
+          // Get currently active container
+          const activeContainer = document.querySelector('.container.active');
+          
+          // Fade out the current content
+          if (activeContainer) {
+              activeContainer.style.opacity = 0;  // Fade out the content
+              setTimeout(() => {
+                  activeContainer.style.display = 'none'; // Hide the current container after fade-out
+                  activeContainer.classList.remove('active');
+  
+                  // Fade in the new content based on the selected option
+                  if (option === 'option1') {
+                      overviewContent.style.display = 'block';
+                      setTimeout(() => {
+                          overviewContent.classList.add('active');
+                          overviewContent.style.opacity = 1;  // Fade in the content
+                      }, 10);
+                  } else if (option === 'option2') {
+                      projectsContent.style.display = 'block';
+                      setTimeout(() => {
+                          projectsContent.classList.add('active');
+                          projectsContent.style.opacity = 1;  // Fade in the content
+                      }, 10);
+                  }
+              }, 400); // Match this with the fade-out duration (0.6s)
+          }
+      });
+  });
+  
+</script>
 
 </body>
 </html>
