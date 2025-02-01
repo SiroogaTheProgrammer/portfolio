@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
+    <title>Wizards Tools</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Dark theme background */
@@ -15,13 +15,14 @@
             overflow: hidden;
             margin-left: auto;
             margin-right: auto;
-            width: 1000px; /* Only show one content block at a time */
+            width: 1200px; /* Only show one content block at a time */
             position: relative;
+            margin-bottom: 30px;
         }
 
         /* Centered container */
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             padding: 20px;
             margin-left: auto;
             margin-right: auto;
@@ -44,7 +45,13 @@
         h1 {
             text-align: center;
             color: yellowgreen;
-            font-size: 40px !important;
+            font-size: 45px !important;
+        }
+
+        h2 {
+            text-align: center;
+            color: yellowgreen;
+            font-size: 35px !important;
         }
 
         /* Regular text */
@@ -113,7 +120,504 @@
     color: #7d7d7d;
   }
 
+  /*books button*/
+
+  /* From Uiverse.io by gharsh11032000 */ 
+.animated-button {
+    position: relative;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 36px;
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 16px;
+    background-color: inherit;
+    border-radius: 100px;
+    font-weight: 600;
+    color: greenyellow;
+    box-shadow: 0 0 0 2px greenyellow;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
   
+  .animated-button svg {
+    position: absolute;
+    width: 24px;
+    fill: greenyellow;
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button .arr-1 {
+    right: 16px;
+  }
+  
+  .animated-button .arr-2 {
+    left: -25%;
+  }
+  
+  .animated-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: greenyellow;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #212121;
+    border-radius: 12px;
+  }
+  
+  .animated-button:hover .arr-1 {
+    right: -25%;
+  }
+  
+  .animated-button:hover .arr-2 {
+    left: 16px;
+  }
+  
+  .animated-button:hover .text {
+    transform: translateX(12px);
+  }
+  
+  .animated-button:hover svg {
+    fill: #212121;
+  }
+  
+  .animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px greenyellow;
+  }
+  
+  .animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+  }
+
+  h3 {
+    color: white;
+    font-weight: bold;
+    font-size: 30px !important;
+    font-family: Menlo, Roboto Mono, monospace;
+    text-shadow: 
+        1px 1px 0 green,  /* Right bottom shadow */
+        -1px -1px 0 green, /* Left top shadow */
+        -1px 1px 0 green,  /* Left bottom shadow */
+        1px -1px 0 green;
+  }
+
+  /*visitButton*/
+  /* From Uiverse.io by KapeParaguay */ 
+.buttonpro {
+    margin-top: -53px;
+    float: right;
+    --btn-default-bg: black;
+    --btn-padding: 15px 20px;
+    --btn-hover-bg: green;
+    --btn-transition: 0.3s;
+    --btn-letter-spacing: 0.1rem;
+    --btn-animation-duration: 1.2s;
+    --btn-shadow-color: green;
+    --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+    --hover-btn-color: #7241ff;
+    --default-btn-color: #fff;
+    --font-size: 16px;
+    --font-weight: 600;
+    --font-family: Menlo, Roboto Mono, monospace;
+    border-radius: 6em;
+  }
+  
+  /* button settings 👆 */
+  
+  .buttonpro {
+    box-sizing: border-box;
+    padding: var(--btn-padding);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--default-btn-color);
+    font: var(--font-weight) var(--font-size) var(--font-family);
+    background: var(--btn-default-bg);
+    cursor: pointer;
+    transition: var(--btn-transition);
+    overflow: hidden;
+    box-shadow: var(--btn-shadow);
+    border-radius: 6em;
+    border: 2px solid #2a2b3a;
+  }
+  
+  .buttonpro span {
+    letter-spacing: var(--btn-letter-spacing);
+    transition: var(--btn-transition);
+    box-sizing: border-box;
+    position: relative;
+    background: inherit;
+  }
+  
+  .buttonpro span::before {
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    background: inherit;
+  }
+  .buttonpro:focus {
+    scale: 1.09;
+  }
+  .buttonpro:hover,
+  .buttonpro:focus {
+    background: var(--btn-default-bg);
+    box-shadow: 0px 0px 10px 0px rgba(119, 68, 255, 0.7);
+    border: 2px solid rgb(9, 255, 0);
+  }
+  
+  .buttonpro:hover span,
+  .buttonpro:focus span {
+    color: rgb(9, 255, 0);
+  }
+  
+  .buttonpro:hover span::before,
+  .buttonpro:focus span::before {
+    animation: chitchat linear both var(--btn-animation-duration);
+  }
+  
+  @keyframes chitchat {
+    0% {
+      content: "#";
+    }
+  
+    5% {
+      content: ".";
+    }
+  
+    10% {
+      content: "^{";
+    }
+  
+    15% {
+      content: "-!";
+    }
+  
+    20% {
+      content: "#$_";
+    }
+  
+    25% {
+      content: "№:0";
+    }
+  
+    30% {
+      content: "#{+.";}35%{content: "@}-?";
+    }
+  
+    40% {
+      content: "?{4@%";
+    }
+  
+    45% {
+      content: "=.,^!";
+    }
+  
+    50% {
+      content: "?2@%";
+    }
+  
+    55% {
+      content: "\;1}]";
+    }
+  
+    60% {
+      content: "?{%:%";
+      right: 0;
+    }
+  
+    65% {
+      content: "|{f[4";
+      right: 0;
+    }
+  
+    70% {
+      content: "{4%0%";
+      right: 0;
+    }
+  
+    75% {
+      content: "'1_0<";
+      right: 0;
+    }
+  
+    80% {
+      content: "{0%";
+      right: 0;
+    }
+  
+    85% {
+      content: "]>'";
+      right: 0;
+    }
+  
+    90% {
+      content: "4";
+      right: 0;
+    }
+  
+    95% {
+      content: "2";
+      right: 0;
+    }
+  
+    100% {
+      content: "";
+      right: 0;
+    }
+  }
+  
+  
+/* From Uiverse.io by Shreyanjalipb */ 
+.emoji-button-container {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    margin-bottom: 50px;
+  }
+  
+  .emoji-button {
+    background-color: yellow;
+    border: none;
+    padding: 15px 30px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .emoji-animations {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .emoji {
+    font-size: 35px;
+    opacity: 0;
+    transform: translateY(0);
+    transition:
+      transform 0.5s ease,
+      opacity 0.5s ease;
+  }
+  
+  .emoji-button:hover + .emoji-animations {
+    opacity: 1;
+  }
+  
+  .emoji-button:hover + .emoji-animations .emoji:nth-child(1) {
+    opacity: 1;
+    transform: translate(-50px, -50px);
+  }
+  
+  .emoji-button:hover + .emoji-animations .emoji:nth-child(2) {
+    opacity: 1;
+    transform: translate(50px, -50px);
+  }
+  
+  .emoji-button:hover + .emoji-animations .emoji:nth-child(3) {
+    opacity: 1;
+    transform: translate(-50px, 50px);
+  }
+  
+  .emoji-button:hover + .emoji-animations .emoji:nth-child(4) {
+    opacity: 1;
+    transform: translate(50px, 50px);
+  }
+  
+
+  /*line*/
+  .line-container {
+    text-align: center; /* Optional: center the line in the div */
+}
+
+.styled-line {
+    border: none;         /* Remove the default border */
+    height: 2px;          /* Set the height of the line */
+    background-color: yellowgreen;  /* Set the color of the line */
+    width: 98%;           /* Set the width of the line */
+    margin: 10px auto;    /* Optional: Add space above/below the line */
+}
+
+.dashed-line {
+    border: none;              /* Remove the default border */
+    border-top: 2px dashed yellowgreen; /* Create a dashed line with a green color */
+    width: 98%;                /* Set the width of the line */
+    margin: 10px auto;         /* Optional: Add space above/below the line */
+}
+
+
+
+/*socials*/
+
+/* From Uiverse.io by Artahs */ 
+ul {
+    list-style: none;
+  }
+  
+  .example-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .example-2 .icon-content {
+    margin: 0 10px;
+    position: relative;
+  }
+  .example-2 .icon-content .tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  .example-2 .icon-content:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -50px;
+  }
+  .example-2 .icon-content a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #4d4d4d;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+  .example-2 .icon-content a:hover {
+    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+  }
+  .example-2 .icon-content a svg {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+  }
+  .example-2 .icon-content a:hover {
+    color: white;
+  }
+  .example-2 .icon-content a .filled {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+  }
+  .example-2 .icon-content a:hover .filled {
+    height: 100%;
+  }
+  
+  .example-2 .icon-content a[data-social="discord"] .filled,
+  .example-2 .icon-content a[data-social="discord"] ~ .tooltip {
+    background-color: #7289da;
+  }
+  
+  .example-2 .icon-content a[data-social="steam"] .filled,
+  .example-2 .icon-content a[data-social="steam"] ~ .tooltip {
+    background-color: #171d25;
+  }
+  .example-2 .icon-content a[data-social="instagram"] .filled,
+  .example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+    background: linear-gradient(
+      45deg,
+      #405de6,
+      #5b51db,
+      #b33ab4,
+      #c135b4,
+      #e1306c,
+      #fd1f1f
+    );
+  }
+  .example-2 .icon-content a[data-social="youtube"] .filled,
+  .example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+    background-color: #ff0000;
+  }
+
+
+/*github link button*/
+
+/* From Uiverse.io by Creatlydev */ 
+.btn-github {
+    cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+    border: none;
+
+    margin-left: auto;
+    margin-right: auto;
+  
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 100px;
+    font-weight: 800;
+    place-content: center;
+  
+    padding: 0.75rem 1rem;
+    font-size: 0.825rem;
+    line-height: 1rem;
+  
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow:
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.04),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+    color: #fff;
+  }
+  
+  .btn-github:hover {
+    box-shadow:
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
+      inset 0 0 0 1px rgba(252, 232, 3, 0.08);
+    color: yellowgreen;
+    transform: translate(0, -0.25rem);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+
 
     </style>
 </head>
@@ -123,26 +627,242 @@
     <input checked="" id="option1" name="options" type="radio" />
     <label class="option" for="option1">Overview</label>
     <input id="option2" name="options" type="radio" />
-    <label class="option" for="option2">Projects</label>
+    <label class="option" for="option2">Tools</label>
     <span class="background"></span>
   </div>
   
   <div class="content-wrapper">
     <div class="container active" id="overview-content">
-        <h1>Welcome to My Portfolio</h1>
+        <h1>Welcome to Wizards Tools!</h1>
         <br>
-        <p>This is where you'll find information about my work, skills, and projects. Feel free to explore!</p>
-        <p>By going to the "Projects" tab you can find all sorts of projects I created over the years.</p>
+        <p>This is where you can find all sorts of tools and projects I've made over the years. Feel free to explore! I also have some books and videos available related to programming and a few other subjects.</p>
+        <p>By going to the "Tools" tab you can find all sorts of projects I created over the years.</p>
         <p>Projects were created in 3 languages: Python, C++, and Javascript. All Javascript projects are active websites which can be visited through the links provided. Usualy the source code is provided on the website, if not, then link to source code will be displayed next to the visit button.</p>
         <p>Python projects can be simply copied and run on your own device.</p>
         <p>C++ projects will have 2 versions available. One is an already prebuilt <b>.exe</b> file which could be run, and the original code for that project will be provided on a subpage to be copied.</p>
         <p>A * next to a Python or a C++ project signifies that this project is also available in a different programming language.</p>
+        <p>There are also videos and PDFs avalailable below.</p>
+        <p>Enjoy you visit!</p>
+        <br>
+
+        <!-- From Uiverse.io by Creatlydev --> 
+<button class="btn-github" onclick="window.location.href='https://github.com/SiroogaTheProgrammer/portfolio'">
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7.99992 1.33331C7.12444 1.33331 6.25753 1.50575 5.4487 1.84078C4.63986 2.17581 3.90493 2.66688 3.28587 3.28593C2.03563 4.53618 1.33325 6.23187 1.33325 7.99998C1.33325 10.9466 3.24659 13.4466 5.89325 14.3333C6.22659 14.3866 6.33325 14.18 6.33325 14C6.33325 13.8466 6.33325 13.4266 6.33325 12.8733C4.48659 13.2733 4.09325 11.98 4.09325 11.98C3.78659 11.2066 3.35325 11 3.35325 11C2.74659 10.5866 3.39992 10.6 3.39992 10.6C4.06659 10.6466 4.41992 11.2866 4.41992 11.2866C4.99992 12.3 5.97992 12 6.35992 11.84C6.41992 11.4066 6.59325 11.1133 6.77992 10.9466C5.29992 10.78 3.74659 10.2066 3.74659 7.66665C3.74659 6.92665 3.99992 6.33331 4.43325 5.85998C4.36659 5.69331 4.13325 4.99998 4.49992 4.09998C4.49992 4.09998 5.05992 3.91998 6.33325 4.77998C6.85992 4.63331 7.43325 4.55998 7.99992 4.55998C8.56659 4.55998 9.13992 4.63331 9.66659 4.77998C10.9399 3.91998 11.4999 4.09998 11.4999 4.09998C11.8666 4.99998 11.6333 5.69331 11.5666 5.85998C11.9999 6.33331 12.2533 6.92665 12.2533 7.66665C12.2533 10.2133 10.6933 10.7733 9.20659 10.94C9.44659 11.1466 9.66659 11.5533 9.66659 12.1733C9.66659 13.0666 9.66659 13.7866 9.66659 14C9.66659 14.18 9.77325 14.3933 10.1133 14.3333C12.7599 13.44 14.6666 10.9466 14.6666 7.99998C14.6666 7.1245 14.4941 6.25759 14.1591 5.44876C13.8241 4.63992 13.333 3.90499 12.714 3.28593C12.0949 2.66688 11.36 2.17581 10.5511 1.84078C9.7423 1.50575 8.8754 1.33331 7.99992 1.33331V1.33331Z"
+        fill="currentcolor"
+      ></path>
+    </svg>
+    <span>View on Github</span>
+  </button>
+  
+
     </div>
 
     <div class="container" id="projects-content">
-        <h1>My Projects</h1>
-        <p>By going to the "Projects" tab you can find all sorts of projects I created over the years.</p>
-        <p>Projects were created in 3 languages: Python, C++, and Javascript...</p>
+        <h1>Tools</h1>
+        <p>Here in the tool section you can find many projects I've made over the years, other websites of mine, and books (not mine, but for convinience I keep them here).</p>
+        <p>Projects are available in 3 programming languages: Python, C++, and Javascript.</p>
+
+<br>
+<br>
+
+<div class="line-container">
+    <hr class="styled-line">
+</div>
+
+<br>
+    <h2>Projects</h2>
+  <br>
+
+<button
+  class="relative group border-none bg-transparent p-0 outline-none cursor-pointer font-mono font-light uppercase text-base"
+  style="left: 50%; transform: translateX(-50%)"
+>
+  <span
+    class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-25 rounded-lg transform translate-y-0.5 transition duration-[600ms] ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:translate-y-1 group-hover:duration-[250ms] group-active:translate-y-px"
+  ></span>
+
+  <span
+    class="absolute top-0 left-0 w-full h-full rounded-lg bg-gradient-to-l from-[hsl(217,33%,16%)] via-[hsl(217,33%,32%)] to-[hsl(217,33%,16%)]"
+  ></span>
+
+  <div
+    class="relative flex items-center justify-between py-3 px-6 text-lg text-white rounded-lg transform -translate-y-1 bg-gradient-to-r from-[#f27121] via-[#e94057] to-[#8a2387] gap-3 transition duration-[600ms] ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:-translate-y-1.5 group-hover:duration-[250ms] group-active:-translate-y-0.5 brightness-100 group-hover:brightness-110"
+  >
+    <span class="select-none">Coding Projects</span>
+
+    <svg
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      class="w-5 h-5 ml-2 -mr-1 transition duration-250 group-hover:translate-x-1"
+    >
+      <path
+        clip-rule="evenodd"
+        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+        fill-rule="evenodd"
+      ></path>
+    </svg>
+  </div>
+</button>
+
+<br>
+<br>
+
+<div class="line-container">
+    <hr class="dashed-line">
+</div>
+
+<br>
+<h2>Websites</h2>
+<br>
+<h3>Föli Bus Tracker</h3>
+<!-- From Uiverse.io by KapeParaguay --> 
+<button class="buttonpro" onclick="window.location.href='https://folibustracker.netlify.app'">
+    <span> Visit </span>
+  </button>
+<br>
+
+<h3>Norssi News</h3>
+<!-- From Uiverse.io by KapeParaguay --> 
+<button class="buttonpro" onclick="window.location.href='https://norssinews.netlify.app'">
+    <span> Visit </span>
+  </button>
+  
+
+        <br>
+        <br>
+
+        <div class="line-container">
+            <hr class="dashed-line">
+        </div>
+        
+<br>
+<h2>Books</h2>
+<p>By pressing on the button below you will be sent to a subpage which contains a list of pdfs of books. Most of them are IB text books about programming, but there are also a few university physics books. The books can be viewed as pdfs on the website, or can be downloaded.</p>
+
+        <!-- From Uiverse.io by gharsh11032000 --> 
+<button class="animated-button" onclick="window.location.href='booksHub.html';">
+    <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+      ></path>
+    </svg>
+    <span class="text">BOOKS</span>
+    <span class="circle"></span>
+    <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+      ></path>
+    </svg>
+  </button>
+
+<br>
+<br>
+
+<div class="line-container">
+    <hr class="styled-line">
+</div>
+<br>
+
+<h1>Socials</h1>
+<br>
+<br>
+
+<!-- From Uiverse.io by Artahs --> 
+<ul class="example-2">
+    <li class="icon-content">
+      <a href="https://discord.com/" aria-label="Discord" data-social="discord">
+        <div class="filled"></div>
+        <svg
+          viewBox="0 0 16 16"
+          class="bi bi-discord"
+          fill="currentColor"
+          height="16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"
+          ></path>
+        </svg>
+      </a>
+      <div class="tooltip">Discord</div>
+    </li>
+    <li class="icon-content">
+      <a
+        href="https://store.steampowered.com/"
+        aria-label="Steam"
+        data-social="steam"
+      >
+        <div class="filled"></div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-steam"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M.329 10.333A8.01 8.01 0 0 0 7.99 16C12.414 16 16 12.418 16 8s-3.586-8-8.009-8A8.006 8.006 0 0 0 0 7.468l.003.006 4.304 1.769A2.2 2.2 0 0 1 5.62 8.88l1.96-2.844-.001-.04a3.046 3.046 0 0 1 3.042-3.043 3.046 3.046 0 0 1 3.042 3.043 3.047 3.047 0 0 1-3.111 3.044l-2.804 2a2.223 2.223 0 0 1-3.075 2.11 2.22 2.22 0 0 1-1.312-1.568L.33 10.333Z"
+          ></path>
+          <path
+            d="M4.868 12.683a1.715 1.715 0 0 0 1.318-3.165 1.7 1.7 0 0 0-1.263-.02l1.023.424a1.261 1.261 0 1 1-.97 2.33l-.99-.41a1.7 1.7 0 0 0 .882.84Zm3.726-6.687a2.03 2.03 0 0 0 2.027 2.029 2.03 2.03 0 0 0 2.027-2.029 2.03 2.03 0 0 0-2.027-2.027 2.03 2.03 0 0 0-2.027 2.027m2.03-1.527a1.524 1.524 0 1 1-.002 3.048 1.524 1.524 0 0 1 .002-3.048"
+          ></path>
+        </svg>
+      </a>
+      <div class="tooltip">Steam</div>
+    </li>
+    <li class="icon-content">
+      <a
+        href="https://www.instagram.com/"
+        aria-label="Instagram"
+        data-social="instagram"
+      >
+        <div class="filled"></div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-instagram"
+          viewBox="0 0 16 16"
+          xml:space="preserve"
+        >
+          <path
+            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </a>
+      <div class="tooltip">Instagram</div>
+    </li>
+  </ul>
+  
+<br>
+<br>
+<br>
+
+<!-- From Uiverse.io by Shreyanjalipb --> 
+<div class="emoji-button-container">
+    <button class="emoji-button" onclick="window.location.href='coolLoader.html'">Surprise</button>
+    <div class="emoji-animations">
+      <span class="emoji">😊</span>
+      <span class="emoji">🌸</span>
+      <span class="emoji">🙃</span>
+      <span class="emoji">❤️</span>
+    </div>
+  </div>
+  
+
+
     </div>
     </div>
 
