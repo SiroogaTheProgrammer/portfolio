@@ -121,4 +121,3 @@ while True:
         compare_sequences()
         
     print()
-        
