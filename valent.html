@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+    <style>
+        body {
+            background-color: #fef5f7;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #ff4081;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 50px;
+            color: #ff4081;
+            margin-bottom: 20px;
+        }
+
+        .heart {
+            color: red;
+            font-size: 60px;
+            margin: 10px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            background-color: #ff4081;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+            margin: 5px;
+            border-radius: 20px;
+            position: relative;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .buttons button:hover {
+            background-color: #ff6584;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my Valentine? 💖</h1>
+        <div class="heart">❤️❤️❤️</div>
+        <div class="buttons">
+            <button id="yesButton">Yes</button>
+            <button id="noButton">No</button>
+        </div>
+    </div>
+
+    <script>
+        let noButton = document.getElementById("noButton");
+        let moveX = 0;
+        let moveY = 0;
+        let opacity = 1;
+
+        function getRandomIntInclusive(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Function to move and fade the button a bit on each click
+        function moveAndFade() {
+            let moveX = getRandomIntInclusive(-200, 200);
+            let moveY = getRandomIntInclusive(-200, 200);
+            // Move the button slightly
+
+            opacity -= 0.2;  // Reduce opacity gradually
+
+            // Apply new position and opacity
+            noButton.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            noButton.style.opacity = opacity;
+
+            // If the button is fully transparent, hide it
+            if (opacity <= 0) {
+                noButton.style.display = "none";
+            }
+        }
+
+        document.getElementById("yesButton").onclick = function() {
+            alert("Yay! 💕");
+        }
+
+        document.getElementById("noButton").onclick = function() {
+            moveAndFade(); // Trigger move and fade effect with each click
+        }
+    </script>
+</body>
+</html>

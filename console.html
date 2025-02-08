@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Console</title>
+  <style>
+    body {
+      background-color: #1c1c1c;
+      color: #00ff00;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 20px;
+      margin: 0;
+    }
+
+    .console-container {
+      width: 90%;
+      margin: 0 auto;
+      border: 2px solid #00ff00;
+      padding: 20px;
+      background-color: #000000;
+      box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5);
+      min-height: 400px;
+    }
+
+    .output {
+      white-space: pre-wrap;
+      margin-bottom: 10px;
+    }
+
+    .input-line {
+      display: flex;
+      align-items: center;
+    }
+
+    .input-line span {
+      margin-right: 5px;
+    }
+
+    input {
+      background-color: #000000;
+      color: #00ff00;
+      font-family: 'Courier New', Courier, monospace;
+      border: none;
+      outline: none;
+      width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="console-container">
+    <div id="console-output" class="output">
+>>>Welcome to the interactive console! Type "help" for available commands.
+    </div>
+
+    <div class="input-line">
+      <span>>>>user@web:~$</span>
+      <input type="text" id="console-input" autofocus>
+    </div>
+  </div>
+
+  <script>
+    const inputElement = document.getElementById('console-input');
+    const outputElement = document.getElementById('console-output');
+    
+    // Define commands
+    const commands = {
+      help: "Available commands: help, about, goto [project name], ls, clear, exit",
+      about: "Through this console you can access all the projects available on this website, and all the other websites related to it. Instead of navigating the ever growing network of websites and buttons, you can just enter the name of the project and the console will take you there.",
+      clear: () => {
+        outputElement.innerHTML = '';
+      },
+      ls: "\n[websites]\n\nfolibustracker\nnorssinews\n\n[python]\n\ndictionary\ngenometool\nibgradecalc",
+      exit: () => {
+        window.close();
+      },
+      goto: (projectName) => {
+        const projectUrl = projects[projectName];
+        if (projectUrl) {
+          appendOutput(`Navigating to ${projectName}...`);
+          window.location.href = projectUrl; // Navigate to the project URL
+        } else {
+          appendOutput(`Unknown project: ${projectName}`);
+        }
+      }
+    };
+
+    const projects = {
+        folibustracker: "https://folibustracker.netlify.app",
+        norssinews: "https://norssi-news.netlify.app",
+        dictionary: "",
+        genometool: "",
+        ibgradecalc: ""
+      };
+
+    // Handle input
+    inputElement.addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        const command = inputElement.value.trim();
+        inputElement.value = '';
+
+        if (command.startsWith('goto ')) {
+            // Extract the project name from the command
+            const projectName = command.slice(5).trim();
+            commands.goto(projectName); // Call the goto function with the project name
+          } else if (commands[command]) {
+            if (typeof commands[command] === 'function') {
+              commands[command]();
+            } else {
+              appendOutput(commands[command]);
+            }
+          } else {
+            appendOutput(`Unknown command: ${command}`);
+          }
+        }
+    });
+
+    // Function to append output to the console
+    function appendOutput(text) {
+      outputElement.innerHTML += `\n>>>user@web:~$ ${text}`;
+      outputElement.scrollTop = outputElement.scrollHeight;  // Scroll to bottom
+    }
+  </script>
+
+</body>
+</html>
