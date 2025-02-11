@@ -48,6 +48,8 @@ def dna_to_amino_acids():
     
     # Ensure length of sequence is divisible by 3
     if len(content) % 3 != 0:
+        print(len(content))
+        print(content%3)
         raise ValueError("DNA sequence length must be a multiple of 3")
     
     short_amino_acids = []
@@ -85,25 +87,33 @@ def compare_sequences():
         content2 = file.read()
         file.close()
     
-    l = len(content1)
+    l1 = len(content1)
+    l2 = len(content2)
     
-    if l != len(content2):
-        print("ERROR: the sequences are of different lengths")
-        return None
+    if l1>l2:
+        l = l1-l2
+        content1 = content1[:l1-l]
+    elif l2>l1:
+        l = l2-l1
+        content2 = content2[:l2-l]
     
     similar_sequences = []
     
-    for x in range(0, l, 3):
-        codon1 = content1[x:x+3]
-        codon2 = content2[x:x+3]
-        if codon1 == codon2:
-            similar_sequences.append(codon1)
+    x = 0
+    while x < l1-3:
+        if content1[x:x+3] == content2[x:x+3]:
+            sub = content1[x:x+3]
+            if len(sub) == 3 and sub.isalpha():  # Check if the substring is exactly 3 characters long
+                similar_sequences.append(sub)
+                print(sub)
+        x += 3
                 
     with open('comparison_Results.txt', 'w') as file:
+        file.write("similarities = " + str(len(similar_sequences)))
+        file.write("\n")
         for s in similar_sequences:
             file.write(s)
             file.write("\n")
-        file.write("similarities = " + str(len(similar_sequences)))
         file.close()    
 
 while True:
